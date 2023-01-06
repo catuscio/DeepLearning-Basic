@@ -67,6 +67,7 @@ a = dividend / divisor
 b = my - (mx * a)
 ```
 
+-----
 ## 평균 제곱 오차(mean square error, MSE)
 일반적으로 오차를 구하는 방식은 다음과 같다.
 $$오차 = \frac{예측값}{실제 값}$$
@@ -79,6 +80,49 @@ $$오차의 합 = \sum_{i}^n (y_i - \hat{y}_i)^2 $$
 
 $$평균제곱오차(MSE) = \frac{1}{n} \sum_{i}^n (y_i - \hat{y}_i)^2 $$
 
+## 코딩으로 해보기
+### 1. 데이터 설정
+- $a = 3$, $b = 76$으로, `fake_a_b`라는 리스트를 선언하여 사용해보자.
+```python
+fake_a_b = [3, 76]
+```
+- `data`리스트를 만들어, $(x, y)$ 값을 저장하고, `x`와 `y`변수에 for문을 사용하여 저장한다.
+```python
+data = [[2, 81], [4, 93], [6, 91], [8, 97]]
+x = [i[0] for i in data]    ##data리스트의 순서쌍 중 첫 번째 값을 저장
+y = [i[1] for i in data]    ##data리스트의 순서쌍 중 두 번째 값을 저장
+```
+
+### 2. 내부 함수 구성
+> 일차방정식 $y = ax + b$ 구현
+```python
+def predict(x):
+  return fake_a_b[0] * x + fake_a_b[1]    
+  ##fake_a_b리스트의 첫 번째 원소를 a, 두 번째 원소를 b로 삼음
+```
+
+> 평균 제곱 오차 공식 함수 구현
+```python
+def mse(y, y_hat):
+  return ((y-y_hat) ** 2).mean())   ##.mean() : numpy 라이브러리에서 평균을 구해주는 함수
+```
+
+> `mse()` 함수에 값을 대입해주는 함수 구현
+```python
+def mse_val(y, predict_result):
+  return mse(np.array(y), np.array(predict_result)) ##y는 실제값, predict_result는 예측값
+```
+
+### 3. main 함수 작성
+predict_result = []   ##예측값을 저장할 빈 리스트 선언
+
+for i in range(len(x)):   ##독립변수 x의 수 만큼 반복
+  predict_result.append(predict(x[i]))    ##predict_result 리스트에 predict() 함수에 x값 대입한 결과값 추가
+  print("공부시간 = %.f, 실제점수 = %.f, 예측점수 = %.f" %(x[i], y[i], predict(x[i])))    ##결과 출력
 
 
-
+### 4. MSE값 출력
+```python
+print("mse 최종값: " + str(mse_val(predict_result, y)))  
+##print문에서 문자열과 결합하여 출력하므로 str()함수 사용
+```
