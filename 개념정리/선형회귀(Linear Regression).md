@@ -114,12 +114,13 @@ def mse_val(y, predict_result):
 ```
 
 ### 3. main 함수 작성
+```python
 predict_result = []   ##예측값을 저장할 빈 리스트 선언
 
 for i in range(len(x)):   ##독립변수 x의 수 만큼 반복
   predict_result.append(predict(x[i]))    ##predict_result 리스트에 predict() 함수에 x값 대입한 결과값 추가
   print("공부시간 = %.f, 실제점수 = %.f, 예측점수 = %.f" %(x[i], y[i], predict(x[i])))    ##결과 출력
-
+```
 
 ### 4. MSE값 출력
 ```python
