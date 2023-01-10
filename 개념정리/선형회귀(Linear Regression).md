@@ -80,7 +80,7 @@ $$오차의 합 = \sum_{i}^n (y_i - \hat{y}_i)^2 $$
 
 $$평균제곱오차(MSE) = \frac{1}{n} \sum_{i}^n (y_i - \hat{y}_i)^2 $$
 
-$$평균제곱오차(MSE) = \frac{1}{n} \sum_{i}^n (y_i - \hat{y}_i)^2 = Var(\hat{y}) + Bias(\hat{y})^2$$
+$$평균제곱오차(MSE) = \frac{1}{n} \sum_{i}^n (y_i - \hat{y}_i)^2 = Var(\hat{y}) + Bias(\hat{y})^2 + Var(\epsilon)$$
 
 ## 코딩으로 해보기
 ### 1. 데이터 설정
