@@ -34,3 +34,7 @@ $$y = a_1 x_1 + a_2 x_2 + b$$
 
 ## 코드로 구현해보자
 https://github.com/catuscio/DeepLearning-Basic/blob/main/colab%20workout/multi_linear_regression.ipynb
+
+-----
+### 궁금한 점
+colab 노트로 이동이 불가능하다. 아무래도 github api에서 토큰을 발급 받던지 git 명령어로 따로 마운트를 해야되는 것 같은데 잘 모르겠다,,
