@@ -90,3 +90,6 @@ https://github.com/catuscio/DeepLearning-Basic/blob/main/colab%20workout/XOR_Pro
 해당 과정을 수식으로 나타내면 다음과 같다.
 $$W(t+1) = W_t - \frac{\delta 오차}{\delta W}$$
 
+---
+# 지난 주차 실습 과제
+https://github.com/catuscio/DeepLearning-Basic/blob/main/colab%20workout/LogisticRegression_forStudent_ipynb%EC%9D%98_%EC%82%AC%EB%B3%B8.ipynb
